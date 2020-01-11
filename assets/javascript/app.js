@@ -1,3 +1,6 @@
 $("#done").on("click", function () {
-    console.log("You pushed the done button.");
+    //I need to create a function that will check to see what is checked
+    console.log($("input:checked").val() + "is selected!");
 })
+
+
