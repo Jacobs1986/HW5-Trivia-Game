@@ -14,19 +14,15 @@ let questions = [
         correct: "A"
     }
 ];
+let questionCount = 0;
 
-let game = {
+var game = {
+
     start: function() {
         console.log("clicked");
-        for (let i = 0; i < questions.length; i++) {
-            card.append(`<h2>${questions[i].question}</h2>`);
-            for (j = 0; j < questions[i].answers.length; j++) {
-                card.append(`<input type='radio' name='question-${i}' value='${questions[i].answers[j]}'>${questions[i].answers[j]}`);
-            }
-        }
-        $("#start").remove()
-        card.append("<br><br><button id='done'>Done</button>")
-    },
+        
+    }
+    /*
     done: function() {
         let input = card.children("input:checked");
         for (let i = 0; i < input.length; i++) {
@@ -40,8 +36,10 @@ let game = {
 
         
     }
+    */
 }
 
+// Click events
 $("#start").on("click", function(event) {
     event.preventDefault();
     game.start();
