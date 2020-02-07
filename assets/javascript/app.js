@@ -15,6 +15,7 @@ let questions = [
     }
 ];
 let questionCount = 0;
+let buttonCount = 1
 
 loadQuestion = () => {
     console.log("Question will be loaded")
@@ -25,13 +26,22 @@ loadQuestion = () => {
     answers.forEach(element => {
         card.append(`<input type='radio' name='question-${questionText}' value='${element}'>${element}<br>`);
     })
-    questionCount++
-    if (questionCount < 2) {
+    // questionCount++
+    if (buttonCount < 2) {
         card.append("<br><button id='next'>Next</button>");
     } else
-        card.append("<br><button>Done</button>")
+        card.append("<br><button id='done'>Done</button>")
 }
 
+checkAnswer = () => {
+    let inputs = card.children("input:checked")
+    console.log(inputs.val());
+    let correctAnswer = questions[questionCount].correct
+    if (inputs.val() === correctAnswer) {
+        console.log("You got the correct answer")
+    } else
+        console.log("The answer is wrong.")
+}
 
 
 // Click events
@@ -42,10 +52,13 @@ $("#start").on("click", function(event) {
 })
 
 $(document).on("click", "#done", function() {
-    game.done();
+    checkAnswer();
 })
 
 $(document).on("click", "#next", function() {
+    checkAnswer();
+    questionCount++
+    buttonCount++;
     $(card).html("");
     loadQuestion();
 })
