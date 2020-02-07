@@ -16,28 +16,7 @@ let questions = [
 ];
 let questionCount = 0;
 
-var game = {
 
-    start: function() {
-        console.log("clicked");
-        
-    }
-    /*
-    done: function() {
-        let input = card.children("input:checked");
-        for (let i = 0; i < input.length; i++) {
-            console.log(input);
-            if ($(input[i]).val() === questions[i].correct) {
-                console.log("You guessed right");
-            } else {
-                console.log("You guessed wrong.")
-            }
-        }
-
-        
-    }
-    */
-}
 
 // Click events
 $("#start").on("click", function(event) {
