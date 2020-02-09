@@ -19,6 +19,9 @@ let buttonCount = 1;
 let timeLimit = 10;
 let timer = null;
 
+let correctCount = 0;
+let missedCount = 0;
+
 loadQuestion = () => {
     console.log("Question will be loaded")
     let questionText = questions[questionCount].question;
@@ -41,8 +44,11 @@ checkAnswer = () => {
     let correctAnswer = questions[questionCount].correct
     if (inputs.val() === correctAnswer) {
         console.log("You got the correct answer")
-    } else
+        correctCount++
+    } else {
         console.log("The answer is wrong.")
+        missedCount++
+    }
 }
 
  countDown = () => {
@@ -50,8 +56,16 @@ checkAnswer = () => {
     $("#timer").html(timeLimit);
     if (timeLimit === 0) {
         console.log("TIMES UP!")
-        clearTimeout(timer);
+        done();
     }
+}
+
+done = () => {
+    clearTimeout(timer);
+    $("#quiz-area").empty();
+    $("#timer").empty();
+    console.log(`You got this many right: ${correctCount}`)
+    console.log(`You got this many wrong: ${missedCount}`)
 }
 
 
@@ -65,6 +79,7 @@ $("#start").on("click", function(event) {
 
 $(document).on("click", "#done", function() {
     checkAnswer();
+    done();
 })
 
 $(document).on("click", "#next", function() {
