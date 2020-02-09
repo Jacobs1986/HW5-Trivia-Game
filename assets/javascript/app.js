@@ -121,6 +121,7 @@ done = () => {
 // Click events
 $("#start").on("click", function(event) {
     event.preventDefault();
+    $("#quiz-area").empty();
     $("#start").remove();
     timer = setInterval(countDown, 1000);
     loadQuestion();
