@@ -3,15 +3,64 @@ let card = $("#quiz-area")
 
 // Questions for the game
 let questions = [
+    // question 1
     {
-        question: "What is the answer to question 1?",
-        answers: ["a", "b", "c", "d"],
-        correct: "c"
+        question: "Who was the original voice actor for Mickey Mouse?",
+        answers: ["Bret Iwan", "Walt Disney", "Clarence Nash", "Les Perkins"],
+        correct: "Walt Disney"
+    },
+    // question 2
+    {
+        question: "Which film was the first animated film to win the Golden Globe for Best Motion Picture?",
+        answers: ["The Little Mermaid", "Aladdin", "The Hunchback of Notre Dame", "Beauty and the Beast"],
+        correct: "Beauty and the Beast"
+    }, 
+    // question 3
+    {
+        question: "In what year did Disneyland first open it's magical doors?",
+        answers: ["1955", "1960", "1945", "1956"],
+        correct: "1955"
+    },
+    // question 4
+    {
+        question: "Mickey's canine companion Pluto had a different name one time. What was it?",
+        answers: ["Chance", "Buddy", "Rover", "Milo"],
+        correct: "Rover"
+    },
+    // question 5
+    {
+        question: "What was the first show that aired on the Disney Channel in 1983",
+        answers: ["Duck Tales", "Still the Beaver", "Welcome to Pooh Corner", "Good Morning, Mickey!"],
+        correct: "Good Morning, Mickey!"
+    },
+    // question 6
+    {
+        question: "\"What's the big idea!?\" is a famouse phrase from which character?",
+        answers: ["Minnie Mouse", "Donald Duck", "Goofy", "Daisy Duck"],
+        correct: "Donald Duck"
+    },
+    // question 7
+    {
+        question: "What was the last film Walt Disney produced before he passed away in 1966",
+        answers: ["The Fox and the Hound", "The Jungle Book", "Robin Hood", "The Rescuers"],
+        correct: "The Jungle Book"
+    },
+    // question 8
+    {
+        question: "The years between 1989 and 1999 is know as what?",
+        answers: ["The Disney Renaissance", "Disney's Golden Years", "The Mickey Decade", "Fantasia"],
+        correct: "The Disney Renaissance"
+    },
+    // question 9
+    {
+        question: "Disney World is a magical place, but it was also the place where this iconic band broke up. Who was it?",
+        answers: ["The Beatles", "The Who", "The Monkees", "Yes"],
+        correct: "The Beatles"
     },
     {
-        question: "What is the answer to question 2?",
-        answers: ["A", "B", "C", "D"],
-        correct: "A"
+        question: "",
+        answers: [],
+        correct: ""
     }
 ];
 let questionCount = 0;
