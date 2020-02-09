@@ -15,7 +15,9 @@ let questions = [
     }
 ];
 let questionCount = 0;
-let buttonCount = 1
+let buttonCount = 1;
+let timeLimit = 10;
+let timer = null;
 
 loadQuestion = () => {
     console.log("Question will be loaded")
@@ -43,11 +45,21 @@ checkAnswer = () => {
         console.log("The answer is wrong.")
 }
 
+ countDown = () => {
+    timeLimit--;
+    $("#timer").html(timeLimit);
+    if (timeLimit === 0) {
+        console.log("TIMES UP!")
+        clearTimeout(timer);
+    }
+}
+
 
 // Click events
 $("#start").on("click", function(event) {
     event.preventDefault();
     $("#start").remove();
+    timer = setInterval(countDown, 1000);
     loadQuestion();
 })
 
